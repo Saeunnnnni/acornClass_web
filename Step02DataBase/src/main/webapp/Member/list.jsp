@@ -1,46 +1,43 @@
-<%@page import="test.member.dto.MemberDto"%>
 <%@page import="java.util.List"%>
 <%@page import="test.member.dao.MemberDao"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page import="test.member.dto.MemberDto"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <%
-	//MemberDao ê°ì²´ì˜ ì°¸ì¡°ê°’ ì–»ì–´ì˜¤ê¸°
-	MemberDao dao=MemberDao.getInstance();
-	//íšŒì› ëª©ë¡ì–»ì–´ì˜¤ê¸°
-	List<MemberDto> list=dao.getList();
-%>    
+   //MemberDao °´Ã¼ÀÇ ÂüÁ¶°ª ¾ò¾î¿À±â
+   MemberDao dao = MemberDao.getInstance();
+   //È¸¿ø ¸ñ·Ï ¾ò¾î¿À±â
+   List<MemberDto> list = dao.getList();
+%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>/member/list.jsp</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
-	<div class="container">
-		<h1>íšŒì› ëª©ë¡ì…ë‹ˆë‹¤.</h1>
-		<table>
-			<thead>
-				<tr>
-					<th>ë²ˆí˜¸</th>
-					<th>ì´ë¦„</th>
-					<th>ì£¼ì†Œ</th>
-				</tr>
-			</thead>
-			<tbody>
-			<%for(MemberDto tmp:list){ %>
-				<tr>
-					<td><%=tmp.getNum() %></td>
-					<td><%=tmp.getName() %></td>
-					<td><%=tmp.getAddr() %></td>
-				</tr>
-			<%} %>
-			</tbody>
-		</table>
-	</div>
+   <div class="container">
+      <h1>È¸¿ø ¸ñ·Ï ÀÔ´Ï´Ù.</h1>
+      <table class = "table caption-top">
+         <caption>È¸¿ø¸ñ·Ï</caption>
+         <thead>
+            <tr>
+               <th >¹øÈ£</th>
+               <th>ÀÌ¸§</th>
+               <th>ÁÖ¼Ò</th>
+            </tr>
+         </thead>
+         <tbody>
+         <%for(MemberDto tmp : list ) { %>
+            <tr>
+               <td><%=tmp.getNum() %></td>
+               <td><%=tmp.getName() %></td>
+               <td><%=tmp.getAddr() %></td>
+            </tr>
+         <%} %>
+         </tbody>
+      </table>      
+   </div>
 </body>
 </html>
-
-
-
-
-
