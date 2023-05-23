@@ -19,6 +19,7 @@ public class FortuneServlet extends HttpServlet{	//1.HttpServlet 클래스 상�
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//여기에 필요한 객체가 생성되면서 참조값(요청과 응답)이 알아서 전달이 된다!
 		//이 안에 우리가 필요한 내용을 코딩하면 된다 !
+		//sevice를 java에서의 main함수라고 생각하면 됨
 		
 		//응답 인코딩 설정
 		resp.setCharacterEncoding("utf-8");
